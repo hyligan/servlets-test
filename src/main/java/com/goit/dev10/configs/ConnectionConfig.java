@@ -4,9 +4,9 @@ public class ConnectionConfig {
     private ConnectionConfig() {
     }
     public static final int BATCH_SIZE = 30;
-    public static final String URL_JDBC = "jdbc:postgresql://localhost:5432/shopdb";
-    public static final String USER = "myuser";
-    public static final String PASSWORD ="mysecretpassword";
+    public static final String URL_JDBC = "jdbc:postgresql://35.238.176.199:5432/shop";
+    public static final String USER = "dev12";
+    public static final String PASSWORD ="dev12thebest";
     public static final String TABLE_NAME = "worker";
     public static final String CREATE_TABLE = "create table public."+TABLE_NAME+"\n" +
             "(\n" +

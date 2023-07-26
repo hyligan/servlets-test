@@ -1,19 +1,20 @@
 package com.goit.dev10.servlets;
 
-import com.goit.dev10.exceptions.CantCreateTableException;
-import com.goit.dev10.exceptions.CantGetConnectionFromPoolException;
 import com.goit.dev10.configs.JdbcPool;
 import com.goit.dev10.entities.Worker;
+import com.goit.dev10.exceptions.CantCreateTableException;
+import com.goit.dev10.exceptions.CantGetConnectionFromPoolException;
 import com.goit.dev10.exceptions.CantSaveWorkerException;
 import com.goit.dev10.repo.WorkerRepo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,15 +23,17 @@ import java.sql.Statement;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 import static com.goit.dev10.configs.ConnectionConfig.CREATE_TABLE;
 import static com.goit.dev10.configs.ConnectionConfig.TABLE_NAME;
-
+@WebServlet("/api/workers")
 public class FirstServlet extends HttpServlet {
     private WorkerRepo workerRepo = new WorkerRepo();
     @Override
     public void init(ServletConfig config) throws ServletException {
+        
         try(Connection connection = JdbcPool.POOL.getConnectionFromPool();
             Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT table_name\n" +
