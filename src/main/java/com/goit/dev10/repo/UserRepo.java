@@ -64,17 +64,17 @@ public class UserRepo {
   public Optional<User> findByToken(String token){
     try {
       Connection connectionFromPool = JdbcPool.POOL.getConnectionFromPool();
-      PreparedStatement preparedStatement = connectionFromPool.prepareStatement("select * from usr where token = ?");
+      PreparedStatement preparedStatement = connectionFromPool.prepareStatement("select * from public.usr where token = ?");
       preparedStatement.setString(1,token);
       ResultSet resultSet = preparedStatement.executeQuery();
       User user = new User();
       while (resultSet.next()){
         user.setLogin(resultSet.getString("login"));
-        user.setPassword(resultSet.getString("pswd"));
+        user.setPassword(resultSet.getString("password"));
         user.setToken(resultSet.getString("token"));
       }
       JdbcPool.POOL.freeConnection(connectionFromPool);
-      return Optional.of(user);
+      return user.getToken() == null ? Optional.empty() : Optional.of(user);
     } catch (InterruptedException e) {
       return Optional.empty();
     } catch (SQLException e) {
@@ -85,9 +85,10 @@ public class UserRepo {
   public User save(User entity) throws Exception {
     PreparedStatement preparedStatementInsert = JdbcPool.POOL.getConnectionFromPool().prepareStatement("INSERT INTO usr (login,password, token)\n" +
             "VALUES (?, ?, ?)"); 
+    entity.setToken(calculateHMac(entity.getLogin(), entity.getPassword()));
     preparedStatementInsert.setString(1, entity.getLogin());
     preparedStatementInsert.setString(2,entity.getPassword());
-    preparedStatementInsert.setString(3,calculateHMac(entity.getLogin(), entity.getPassword()));
+    preparedStatementInsert.setString(3,entity.getToken());
     preparedStatementInsert.execute();
     return entity;
   }

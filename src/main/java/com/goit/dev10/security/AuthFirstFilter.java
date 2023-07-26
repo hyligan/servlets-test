@@ -11,10 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.Optional;
-import java.util.logging.Logger;
 
-@WebFilter(value = "/user")
-public class AuthFilter extends HttpFilter {
+@WebFilter(value = "/api/*")
+public class AuthFirstFilter extends HttpFilter {
 
   private final UserRepo userRepo = new UserRepo();
 

@@ -13,3 +13,11 @@ u
 Esrc/main/java/com/goit/dev10/exceptions/CantCreateTableException.java,4/0/40e92bf2cb48b378c14a685b7d26b8d7b443662c
 
 Osrc/main/java/com/goit/dev10/exceptions/CantGetConnectionFromPoolException.java,f/f/ff6091deb33c545cea76db793d88001329beec1b
+a
+1src/main/java/com/goit/dev10/repo/WorkerRepo.java,b/b/bbbacf282f23bfbecd0bf39c41f5b77ed35734fa
+j
+:src/main/java/com/goit/dev10/configs/ConnectionConfig.java,1/0/10c624fd5ec09452aefefbbc6c1a74a0a8731df5
+I
+src/main/webapp/index.jsp,8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded
+O
+src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
