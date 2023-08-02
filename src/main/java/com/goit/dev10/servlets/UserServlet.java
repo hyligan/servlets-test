@@ -1,7 +1,6 @@
 package com.goit.dev10.servlets;
 
 import com.goit.dev10.entities.User;
-import com.goit.dev10.entities.Worker;
 import com.goit.dev10.repo.UserRepo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,11 +14,6 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.templateresolver.FileTemplateResolver;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -64,6 +58,7 @@ public class UserServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
     resp.setContentType("text/html");
 
     Map<String, Object> respMap = new LinkedHashMap<>();

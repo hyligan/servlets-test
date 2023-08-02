@@ -17,8 +17,6 @@ j
 :src/main/java/com/goit/dev10/configs/ConnectionConfig.java,1/0/10c624fd5ec09452aefefbbc6c1a74a0a8731df5
 O
 src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
-j
-:src/main/java/com/goit/dev10/servlets/HomeWorkServlet.java,9/1/91c53d75f7d2205ac38ddc28b4dc905aede7488b
 _
 /src/main/java/com/goit/dev10/entities/User.java,5/1/5138dc8be0f9af072b52a0a4cd33917f6bf951e0
 \

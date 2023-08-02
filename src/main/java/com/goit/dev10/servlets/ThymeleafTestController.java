@@ -22,7 +22,7 @@ public class ThymeleafTestController extends HttpServlet {
     engine = new TemplateEngine();
     
     FileTemplateResolver resolver = new FileTemplateResolver();
-    resolver.setPrefix(getClass().getClassLoader().getResource("templates").getPath());
+//    resolver.setPrefix(getClass().getClassLoader().getResource("WEB-INF/templates").getPath());
     resolver.setSuffix(".html");
     resolver.setTemplateMode("HTML5");
     resolver.setOrder(engine.getTemplateResolvers().size());
