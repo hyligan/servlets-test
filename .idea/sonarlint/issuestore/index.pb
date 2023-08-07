@@ -23,3 +23,13 @@ _
 ,src/main/java/com/goit/dev10/utils/Util.java,6/8/68ae66f88f82366e1901b390bc1c98949ce155e7
 _
 /src/main/java/com/goit/dev10/repo/UserRepo.java,8/9/8976486b2d16780f0251e66919b6975597c12868
+I
+src/main/webapp/index.jsp,8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded
+[
++src/main/webapp/WEB-INF/static/css/main.css,7/2/72045d2fc160cfe8cd1f3e5cd2c4912bcea257e7
+\
+,src/main/webapp/WEB-INF/static/css/style.css,3/1/31f082b3cc5fc8b6fccfa704155d39a9edc2bdb1
+r
+Bsrc/main/java/com/goit/dev10/servlets/ThymeleafTestController.java,b/e/bebaa4a7b24289a14df02a54ab978b7754212231
+[
++src/main/webapp/WEB-INF/static/css/util.css,e/7/e7268c5d1e5602e97aa9ba824e439642904beb54
